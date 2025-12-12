@@ -41,15 +41,27 @@ function formatDate(dateString) {
 
 // Render post
 function renderPost() {
-    // Get post from localStorage
-    const postData = localStorage.getItem('currentPost');
-    if (!postData) {
+    // Get slug from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const slug = urlParams.get('slug');
+    
+    if (!slug) {
+        console.error('❌ Nenhum slug encontrado na URL');
         window.location.href = 'blog.html';
         return;
     }
     
-    const post = JSON.parse(postData);
-    console.log('📝 Post carregado:', post); // Debug
+    // Load posts and find the one with matching slug
+    const posts = loadBlogPosts();
+    const post = posts.find(p => p.slug === slug);
+    
+    if (!post) {
+        console.error('❌ Post não encontrado com slug:', slug);
+        window.location.href = 'blog.html';
+        return;
+    }
+    
+    console.log('📝 Post carregado:', post.title); // Debug
     const colors = categoryColors[post.category];
     
     // Update page title
@@ -160,8 +172,8 @@ function openPost(postId) {
     const post = loadBlogPosts().find(p => p.id === postId);
     if (!post) return;
     
-    localStorage.setItem('currentPost', JSON.stringify(post));
-    window.location.reload();
+    // Navigate to post using slug in URL
+    window.location.href = `post.html?slug=${post.slug}`;
 }
 
 // Share functions
@@ -171,8 +183,13 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-    const postData = localStorage.getItem('currentPost');
-    const post = JSON.parse(postData);
+    // Get current post from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const slug = urlParams.get('slug');
+    const post = loadBlogPosts().find(p => p.slug === slug);
+    
+    if (!post) return;
+    
     const url = window.location.href;
     const text = `${post.title} - Blog de Inovação Educacional`;
     window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`, '_blank');
