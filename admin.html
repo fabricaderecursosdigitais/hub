@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin - Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .admin-card {
+            transition: all 0.3s ease;
+        }
+        .admin-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-100">
+    
+    <!-- Header -->
+    <header class="bg-blue-900 text-white py-6 shadow-lg">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-3xl font-bold">Painel Administrativo</h1>
+                    <p class="text-blue-200 mt-1">Gerenciamento de Posts do Blog</p>
+                </div>
+                <a href="blog.html" class="bg-white text-blue-900 px-6 py-3 rounded-full font-semibold hover:bg-blue-50 transition-all">
+                    Ver Blog
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        
+        <!-- Stats -->
+        <div class="grid md:grid-cols-4 gap-6 mb-12">
+            <div class="bg-white p-6 rounded-2xl shadow-md">
+                <div class="text-3xl font-bold text-blue-900 mb-2" id="totalPosts">0</div>
+                <div class="text-gray-600">Total de Posts</div>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-md">
+                <div class="text-3xl font-bold text-purple-600 mb-2" id="featuredCount">0</div>
+                <div class="text-gray-600">Posts em Destaque</div>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-md">
+                <div class="text-3xl font-bold text-green-600 mb-2" id="categoriesCount">4</div>
+                <div class="text-gray-600">Categorias</div>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-md">
+                <div class="text-3xl font-bold text-orange-600 mb-2" id="lastUpdate">-</div>
+                <div class="text-gray-600">Última Atualização</div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="mb-8">
+            <button onclick="toggleForm()" id="toggleFormBtn" class="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition-all shadow-lg">
+                ➕ Criar Novo Post
+            </button>
+            <button onclick="exportData()" class="bg-green-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-700 transition-all shadow-lg ml-4">
+                📥 Exportar Dados
+            </button>
+        </div>
+
+        <!-- Create/Edit Form -->
+        <div id="postForm" class="bg-white rounded-2xl shadow-lg p-8 mb-12 hidden">
+            <h2 class="text-2xl font-bold mb-6 text-gray-900">Criar Novo Post</h2>
+            <form id="createPostForm" class="space-y-6">
+                <input type="hidden" id="postId">
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Título</label>
+                        <input type="text" id="postTitle" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Categoria</label>
+                        <select id="postCategory" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="">Selecione...</option>
+                            <option value="academia-digital">Academia Digital</option>
+                            <option value="design-grafico">Design Gráfico</option>
+                            <option value="audiovisual">Audiovisual</option>
+                            <option value="analise-dados">Análise de Dados</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Autor</label>
+                        <input type="text" id="postAuthor" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Cargo do Autor</label>
+                        <input type="text" id="postAuthorRole" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Data</label>
+                        <input type="date" id="postDate" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Tempo de Leitura</label>
+                        <input type="text" id="postReadTime" placeholder="ex: 5 min" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">URL da Imagem</label>
+                    <input type="url" id="postImage" placeholder="https://exemplo.com/imagem.jpg" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Resumo/Excerpt</label>
+                    <textarea id="postExcerpt" rows="3" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Tags (separadas por vírgula)</label>
+                    <input type="text" id="postTags" placeholder="ex: gamificação, tecnologia educacional, engajamento" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <p class="text-sm text-gray-500 mt-1">💡 Digite as tags separadas por vírgula</p>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Conteúdo Completo</label>
+                    
+                    <!-- Editor Toolbar -->
+                    <div style="border: 1px solid #d1d5db; border-radius: 0.5rem 0.5rem 0 0; background-color: #f9fafb; padding: 12px; display: flex; flex-wrap: wrap; gap: 8px;">
+                        <button type="button" onclick="insertFormat('h2', 'Título da Seção')" style="padding: 4px 12px; background: white; border: 1px solid #d1d5db; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 14px;" title="Subtítulo">
+                            H2
+                        </button>
+                        <button type="button" onclick="insertFormat('h3', 'Subtítulo')" style="padding: 4px 12px; background: white; border: 1px solid #d1d5db; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 14px;" title="Subtítulo menor">
+                            H3
+                        </button>
+                        <span style="border-left: 1px solid #d1d5db; margin: 0 4px;"></span>
+                        <button type="button" onclick="insertFormat('p', 'Seu parágrafo aqui')" style="padding: 4px 12px; background: white; border: 1px solid #d1d5db; border-radius: 4px; cursor: pointer; font-size: 14px;" title="Parágrafo">
+                            📝 Parágrafo
+                        </button>
+                        <button type="button" onclick="insertFormat('strong', 'texto em negrito')" style="padding: 4px 12px; background: white; border: 1px solid #d1d5db; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 14px;" title="Negrito">
+                            B
+                        </button>
+                        <button type="button" onclick="insertFormat('em', 'texto em itálico')" style="padding: 4px 12px; background: white; border: 1px solid #d1d5db; border-radius: 4px; cursor: pointer; font-style: italic; font-size: 14px;" title="Itálico">
+                            I
+                        </button>
+                        <span style="border-left: 1px solid #d1d5db; margin: 0 4px;"></span>
+                        <button type="button" onclick="insertList('ul')" style="padding: 4px 12px; background: white; border: 1px solid #d1d5db; border-radius: 4px; cursor: pointer; font-size: 14px;" title="Lista com marcadores">
+                            • Lista
+                        </button>
+                        <button type="button" onclick="insertList('ol')" style="padding: 4px 12px; background: white; border: 1px solid #d1d5db; border-radius: 4px; cursor: pointer; font-size: 14px;" title="Lista numerada">
+                            1. Lista
+                        </button>
+                        <span style="border-left: 1px solid #d1d5db; margin: 0 4px;"></span>
+                        <button type="button" onclick="insertLink()" style="padding: 4px 12px; background: white; border: 1px solid #d1d5db; border-radius: 4px; cursor: pointer; font-size: 14px;" title="Inserir link">
+                            🔗 Link
+                        </button>
+                        <button type="button" onclick="insertImage()" style="padding: 4px 12px; background: white; border: 1px solid #d1d5db; border-radius: 4px; cursor: pointer; font-size: 14px;" title="Inserir imagem">
+                            🖼️ Imagem
+                        </button>
+                        <button type="button" onclick="insertButton()" style="padding: 4px 12px; background: white; border: 1px solid #d1d5db; border-radius: 4px; cursor: pointer; font-size: 14px;" title="Inserir botão">
+                            🔘 Botão
+                        </button>
+                        <span style="border-left: 1px solid #d1d5db; margin: 0 4px;"></span>
+                        <button type="button" onclick="insertQuote()" style="padding: 4px 12px; background: white; border: 1px solid #d1d5db; border-radius: 4px; cursor: pointer; font-size: 14px;" title="Citação">
+                            💬 Citação
+                        </button>
+                        <button type="button" onclick="insertDivider()" style="padding: 4px 12px; background: white; border: 1px solid #d1d5db; border-radius: 4px; cursor: pointer; font-size: 14px;" title="Divisor">
+                            ─ Divisor
+                        </button>
+                    </div>
+                    
+                    <textarea id="postContent" rows="12" required style="width: 100%; padding: 16px; border: 1px solid #d1d5db; border-top: 0; border-radius: 0 0 0.5rem 0.5rem; font-family: monospace; font-size: 14px; resize: vertical;"></textarea>
+                    <p class="text-sm text-gray-500 mt-2">💡 Use os botões acima para formatar o conteúdo ou edite o HTML diretamente</p>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <input type="checkbox" id="postFeatured" class="w-5 h-5 text-blue-600 rounded focus:ring-2 focus:ring-blue-500">
+                    <label for="postFeatured" class="text-sm font-semibold text-gray-700">
+                        ⭐ Marcar como Post em Destaque
+                    </label>
+                </div>
+
+                <div class="flex gap-4 pt-4">
+                    <button type="submit" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-all">
+                        Salvar Post
+                    </button>
+                    <button type="button" onclick="cancelForm()" class="bg-gray-300 text-gray-700 px-8 py-3 rounded-full font-semibold hover:bg-gray-400 transition-all">
+                        Cancelar
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Posts List -->
+        <div class="bg-white rounded-2xl shadow-lg p-8">
+            <h2 class="text-2xl font-bold mb-6 text-gray-900">Posts Publicados</h2>
+            <div id="postsList" class="space-y-4">
+                <!-- Posts serão inseridos aqui -->
+            </div>
+        </div>
+
+    </main>
+
+    <script src="blog-data.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

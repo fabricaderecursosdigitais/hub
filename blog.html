@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Fábrica de Recursos Digitais - Hospital Albert Einstein</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen bg-gray-50">
+    
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div>
+                    <a href="index.html" class="text-2xl font-bold text-blue-900">Fábrica de Recursos Digitais</a>
+                    <p class="text-sm text-gray-600">Hospital Albert Einstein</p>
+                </div>
+                <nav class="hidden md:flex gap-6">
+                    <a href="blog.html" class="text-blue-600 font-semibold">Blog</a>
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition-colors">Voltar para a Home</a>
+                </nav>
+                <button id="mobileMenuBtn" class="md:hidden text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-b shadow-lg">
+        <nav class="flex flex-col p-6 gap-4">
+            <a href="index.html" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+            <a href="index.html#areas" class="text-gray-700 hover:text-blue-600 transition-colors">Áreas</a>
+            <a href="blog.html" class="text-blue-600 font-semibold">Blog</a>
+            <a href="index.html#contact" class="text-gray-700 hover:text-blue-600 transition-colors">Contato</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-900 to-blue-950 text-white py-20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                Blog de Inovação Educacional
+            </h1>
+            <p class="text-xl text-blue-200 max-w-3xl mx-auto">
+                Insights, cases de sucesso e tendências em educação médica e tecnologia
+            </p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="bg-white py-8 border-b sticky top-[73px] z-40">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-wrap gap-3 justify-center">
+                <button onclick="filterPosts('todas')" class="filter-btn active px-6 py-2 rounded-full font-semibold transition-all" data-filter="todas">
+                    Todas
+                </button>
+                <button onclick="filterPosts('academia-digital')" class="filter-btn px-6 py-2 rounded-full font-semibold transition-all" data-filter="academia-digital">
+                    Academia Digital
+                </button>
+                <button onclick="filterPosts('design-grafico')" class="filter-btn px-6 py-2 rounded-full font-semibold transition-all" data-filter="design-grafico">
+                    Design Gráfico
+                </button>
+                <button onclick="filterPosts('audiovisual')" class="filter-btn px-6 py-2 rounded-full font-semibold transition-all" data-filter="audiovisual">
+                    Audiovisual
+                </button>
+                <button onclick="filterPosts('analise-dados')" class="filter-btn px-6 py-2 rounded-full font-semibold transition-all" data-filter="analise-dados">
+                    Análise de Dados
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section id="featuredPost" class="py-12 bg-gray-50">
+        <!-- Será preenchido dinamicamente -->
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8 text-gray-900">Todos os Posts</h2>
+            <div id="postsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Posts serão inseridos aqui dinamicamente -->
+            </div>
+            
+            <!-- Empty State -->
+            <div id="emptyState" class="hidden text-center py-12">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto text-gray-400 mb-4">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <p class="text-xl text-gray-600">Nenhum post encontrado nesta categoria</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-20 bg-gradient-to-br from-blue-900 to-blue-950 text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Assine Nossa Newsletter</h2>
+            <p class="text-xl text-blue-200 mb-8">
+                Receba as últimas novidades em educação médica direto no seu e-mail
+            </p>
+            <form id="newsletterForm" class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
+                <input 
+                    type="email" 
+                    id="newsletterEmail"
+                    placeholder="Seu melhor e-mail" 
+                    required
+                    class="flex-1 px-6 py-4 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                >
+                <button 
+                    type="submit"
+                    class="bg-white text-blue-900 px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-all"
+                >
+                    Assinar
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-950 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-4">Fábrica de Recursos Digitais</h3>
+                    <p class="text-blue-200 mb-6">
+                        Hospital Israelita Albert Einstein
+                    </p>
+                    <p class="text-blue-300 text-sm leading-relaxed">
+                        Transformando a educação médica através da tecnologia, 
+                        design e análise de dados.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2 text-blue-200">
+                        <li>
+                            <a href="index.html#about" class="hover:text-white transition-colors">
+                                Sobre
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#areas" class="hover:text-white transition-colors">
+                                Áreas
+                            </a>
+                        </li>
+                        <li>
+                            <a href="blog.html" class="hover:text-white transition-colors">
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html#contact" class="hover:text-white transition-colors">
+                                Contato
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Redes Sociais</h4>
+                    <div class="flex gap-3 flex-wrap">
+                        <a href="https://www.linkedin.com/company/hospitalalberteinstein" target="_blank" rel="noopener noreferrer" class="p-3 bg-blue-900 rounded-xl hover:bg-blue-800 transition-colors" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/einstein" target="_blank" rel="noopener noreferrer" class="p-3 bg-blue-900 rounded-xl hover:bg-blue-800 transition-colors" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/einstein" target="_blank" rel="noopener noreferrer" class="p-3 bg-blue-900 rounded-xl hover:bg-blue-800 transition-colors" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path>
+                                <path d="m10 15 5-3-5-3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/einstein" target="_blank" rel="noopener noreferrer" class="p-3 bg-blue-900 rounded-xl hover:bg-blue-800 transition-colors" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-900 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-blue-300 text-sm">
+                        © <span id="currentYear"></span> Hospital Israelita Albert Einstein. Todos os direitos reservados.
+                    </p>
+                    <div class="flex gap-6 text-sm text-blue-300">
+                        <a href="#" class="hover:text-white transition-colors">
+                            Política de Privacidade
+                        </a>
+                        <a href="#" class="hover:text-white transition-colors">
+                            Termos de Uso
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="blog-data.js"></script>
+    <script src="blog.js"></script>
+</body>
+</html>

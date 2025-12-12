@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fábrica de Recursos Digitais - Hospital Albert Einstein</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen bg-white">
+    
+    <!-- Hero Section -->
+    <section id="hero" class="relative h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 text-white">
+        <div class="absolute inset-0 bg-black/20"></div>
+        
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <div class="mb-6">
+                <p class="text-blue-200 mb-4 text-lg">Hospital Israelita Albert Einstein</p>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                    Fábrica de<br>
+                    <span class="text-blue-300">Recursos Digitais</span>
+                </h1>
+            </div>
+            
+            <p class="text-xl md:text-2xl mb-12 text-blue-100 max-w-7xl mx-auto">
+                Transformando a educação médica através da tecnologia, design e análise de dados
+            </p>
+            
+            <div class="flex gap-4 justify-center flex-wrap">
+                <button onclick="scrollToSection('about')" class="bg-white text-blue-900 px-8 py-4 rounded-full hover:bg-blue-50 transition-all font-semibold cursor-pointer">
+                    Conheça Nossas Áreas
+                </button>
+                <button onclick="scrollToSection('blog')" class="border-2 border-white text-white px-8 py-4 rounded-full hover:bg-white/10 transition-all font-semibold cursor-pointer">
+                    Conheça Nosso Blog
+                </button>
+            </div>
+        </div>
+        
+        <button onclick="scrollToSection('about')" class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer bg-transparent border-none" aria-label="Scroll down">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-blue-900">
+                        Sobre o Departamento
+                    </h2>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        A Fábrica de Recursos Digitais do Hospital Israelita Albert Einstein 
+                        é responsável por criar experiências educacionais transformadoras para 
+                        profissionais de saúde em todo o país.
+                    </p>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        Nossa equipe multidisciplinar combina expertise em tecnologia, design, 
+                        audiovisual e análise de dados para desenvolver soluções educacionais 
+                        inovadoras e baseadas em evidências.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        Trabalhamos para garantir que cada iniciativa educacional alcance os mais 
+                        altos padrões de qualidade, engajamento e impacto no aprendizado.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-blue-50 p-6 rounded-2xl">
+                        <div class="text-4xl font-bold text-blue-900 mb-2">500+</div>
+                        <p class="text-gray-700">Cursos Produzidos</p>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-2xl">
+                        <div class="text-4xl font-bold text-blue-900 mb-2">50K+</div>
+                        <p class="text-gray-700">Alunos Impactados</p>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-2xl">
+                        <div class="text-4xl font-bold text-blue-900 mb-2">98%</div>
+                        <p class="text-gray-700">Satisfação</p>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-2xl">
+                        <div class="text-4xl font-bold text-blue-900 mb-2">15</div>
+                        <p class="text-gray-700">Anos de Expertise</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Areas Section -->
+    <section id="areas" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-blue-900">Nossas Áreas</h2>
+                <p class="text-xl text-gray-600 max-w-7xl mx-auto">
+                    Quatro áreas integradas trabalhando juntas para criar experiências 
+                    educacionais excepcionais
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Academia Digital -->
+                <div class="bg-blue-50 hover:bg-blue-100 border-2 border-blue-200 p-8 rounded-3xl transition-all duration-300 hover:shadow-xl">
+                    <div class="inline-flex p-4 rounded-2xl bg-blue-50 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Academia Digital</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">Desenvolvimento de plataformas de ensino, cursos online e experiências de aprendizagem digital interativas.</p>
+                    
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-700">
+                            <span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span>
+                            Plataformas LMS customizadas
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span>
+                            Cursos e-learning
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span>
+                            Simulações interativas
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span>
+                            Gamificação educacional
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Design Gráfico -->
+                <div class="bg-purple-50 hover:bg-purple-100 border-2 border-purple-200 p-8 rounded-3xl transition-all duration-300 hover:shadow-xl">
+                    <div class="inline-flex p-4 rounded-2xl bg-purple-50 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-600">
+                            <circle cx="13.5" cy="6.5" r=".5"></circle>
+                            <circle cx="17.5" cy="10.5" r=".5"></circle>
+                            <circle cx="8.5" cy="7.5" r=".5"></circle>
+                            <circle cx="6.5" cy="12.5" r=".5"></circle>
+                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
+                        </svg>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Design Gráfico</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">Criação de materiais educacionais visualmente impactantes e identidade visual para programas educacionais.</p>
+                    
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-700">
+                            <span class="w-1.5 h-1.5 bg-purple-600 rounded-full mr-3"></span>
+                            Materiais didáticos
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="w-1.5 h-1.5 bg-purple-600 rounded-full mr-3"></span>
+                            Infográficos médicos
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="w-1.5 h-1.5 bg-purple-600 rounded-full mr-3"></span>
+                            Apresentações institucionais
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="w-1.5 h-1.5 bg-purple-600 rounded-full mr-3"></span>
+                            Branding educacional
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Audiovisual -->
+                <div class="bg-red-50 hover:bg-red-100 border-2 border-red-200 p-8 rounded-3xl transition-all duration-300 hover:shadow-xl">
+                    <div class="inline-flex p-4 rounded-2xl bg-red-50 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-600">
+                            <path d="m22 8-6 4 6 4V8Z"></path>
+                            <rect x="2" y="6" width="14" height="12" rx="2" ry="2"></rect>
+                        </svg>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Audiovisual</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">Produção de vídeos educacionais, documentários médicos e transmissões ao vivo de procedimentos e aulas.</p>
+                    
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-700">
+                            <span class="w-1.5 h-1.5 bg-red-600 rounded-full mr-3"></span>
+                            Vídeos educacionais
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="w-1.5 h-1.5 bg-red-600 rounded-full mr-3"></span>
+                            Documentários médicos
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="w-1.5 h-1.5 bg-red-600 rounded-full mr-3"></span>
+                            Transmissões ao vivo
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="w-1.5 h-1.5 bg-red-600 rounded-full mr-3"></span>
+                            Animações 3D
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Análise de Dados -->
+                <div class="bg-green-50 hover:bg-green-100 border-2 border-green-200 p-8 rounded-3xl transition-all duration-300 hover:shadow-xl">
+                    <div class="inline-flex p-4 rounded-2xl bg-green-50 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600">
+                            <path d="M3 3v18h18"></path>
+                            <path d="m19 9-5 5-4-4-3 3"></path>
+                        </svg>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Análise de Dados</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">Análise de métricas de aprendizagem e desenvolvimento de dashboards para acompanhamento de resultados educacionais.</p>
+                    
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-700">
+                            <span class="w-1.5 h-1.5 bg-green-600 rounded-full mr-3"></span>
+                            Learning analytics
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="w-1.5 h-1.5 bg-green-600 rounded-full mr-3"></span>
+                            Dashboards personalizados
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="w-1.5 h-1.5 bg-green-600 rounded-full mr-3"></span>
+                            Relatórios de impacto
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="w-1.5 h-1.5 bg-green-600 rounded-full mr-3"></span>
+                            Pesquisas educacionais
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts Section - Adicione DEPOIS da seção Projects (linha ~XXX) -->
+<section id="blog" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-blue-900">
+                Últimas do Blog
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Confira os artigos mais recentes sobre inovação educacional
+            </p>
+        </div>
+        
+        <div id="latestPosts" class="grid md:grid-cols-3 gap-8 mb-16">
+            <!-- Posts serão inseridos aqui dinamicamente -->
+        </div>
+        
+        <div class="text-center">
+            <a href="blog.html" class="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 transition-all font-semibold">
+                Ver Todos os Artigos
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-gradient-to-br from-blue-900 to-blue-950 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Nossa Equipe</h2>
+                <p class="text-xl text-blue-200 max-w-2xl mx-auto">
+                    Profissionais especializados dedicados a transformar a educação em saúde
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8 mb-16">
+                <div class="text-center">
+                    <div class="inline-flex p-4 bg-blue-800/50 rounded-2xl mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-300">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Colaboração</h3>
+                    <p class="text-blue-200">Trabalhamos em equipe, integrando diferentes expertises para criar soluções completas.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="inline-flex p-4 bg-blue-800/50 rounded-2xl mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-300">
+                            <circle cx="12" cy="8" r="7"></circle>
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Excelência</h3>
+                    <p class="text-blue-200">Buscamos os mais altos padrões de qualidade em cada projeto que desenvolvemos.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="inline-flex p-4 bg-blue-800/50 rounded-2xl mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-300">
+                            <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path>
+                            <path d="M9 18h6"></path>
+                            <path d="M10 22h4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Inovação</h3>
+                    <p class="text-blue-200">Exploramos constantemente novas tecnologias e metodologias educacionais.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="inline-flex p-4 bg-blue-800/50 rounded-2xl mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-300">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Impacto</h3>
+                    <p class="text-blue-200">Focamos em resultados mensuráveis que transformam a educação médica.</p>
+                </div>
+            </div>
+            
+            <div class="bg-blue-800/30 backdrop-blur-sm border-2 border-blue-700/50 rounded-3xl p-8 md:p-12">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-4">Nossa equipe é <span class="text-blue-300">Multidisciplinar</span></h3>
+                        <p class="text-blue-200 mb-6 leading-relaxed">
+                            Estamos sempre em busca novas possibilidades de inovar. Nossa paixão por 
+                            educação é transformadora. Sendo por meio da tecnologia, design, 
+                            audiovisual ou análise de dados.
+                        </p><!-- 
+                        <button class="bg-white text-blue-900 px-8 py-4 rounded-full hover:bg-blue-50 transition-all font-semibold cursor-pointer">
+                            Ver Vagas Abertas
+                        </button> -->
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-blue-900/50 p-6 rounded-2xl">
+                            <div class="text-3xl font-bold mb-2">40+</div>
+                            <p class="text-blue-200">Profissionais</p>
+                        </div>
+                        <div class="bg-blue-900/50 p-6 rounded-2xl">
+                            <div class="text-3xl font-bold mb-2">12+</div>
+                            <p class="text-blue-200">Especialidades</p>
+                        </div>
+                        <div class="bg-blue-900/50 p-6 rounded-2xl">
+                            <div class="text-3xl font-bold mb-2">4</div>
+                            <p class="text-blue-200">Áreas</p>
+                        </div>
+                        <div class="bg-blue-900/50 p-6 rounded-2xl">
+                            <div class="text-3xl font-bold mb-2">1000%</div>
+                            <p class="text-blue-200">Dedicação</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-32">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-blue-900">Entre em Contato</h2>
+                <p class="text-xl text-gray-600 max-w-7xl mx-auto">
+                    Quer saber mais sobre nossos serviços ou iniciar um projeto? 
+                    Estamos à disposição para conversar
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-gray-900">Informações de Contato</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-blue-100 rounded-xl flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600">
+                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 font-semibold mb-1">Endereço</p>
+                                <p class="text-gray-600 leading-relaxed">
+                                    Av. Albert Einstein, 627/701<br>
+                                    Morumbi, São Paulo - SP<br>
+                                    CEP: 05652-900
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-blue-100 rounded-xl flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600">
+                                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 font-semibold mb-1">E-mail</p>
+                                <p class="text-gray-600">inovacao.educacional@einstein.br</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-blue-100 rounded-xl flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 font-semibold mb-1">Telefone</p>
+                                <p class="text-gray-600">(11) 2151-1233</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 p-6 bg-blue-50 rounded-2xl border-2 border-blue-100">
+                        <h4 class="text-lg font-bold mb-3 text-gray-900">Horário de Atendimento</h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            Segunda a Sexta: 8h às 18h<br>
+                            Sábado: 8h às 12h
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-3xl border-2 border-gray-100 shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-900">Envie uma Mensagem</h3>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-semibold mb-2">
+                                Nome Completo
+                            </label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                required
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-colors"
+                                placeholder="Seu nome"
+                            >
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-gray-700 font-semibold mb-2">
+                                E-mail
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-colors"
+                                placeholder="seu.email@exemplo.com"
+                            >
+                        </div>
+                        
+                        <div>
+                            <label for="area" class="block text-gray-700 font-semibold mb-2">
+                                Área de Interesse
+                            </label>
+                            <select
+                                id="area"
+                                name="area"
+                                required
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-colors"
+                            >
+                                <option value="">Selecione uma área</option>
+                                <option value="academia-digital">Academia Digital</option>
+                                <option value="design-grafico">Design Gráfico</option>
+                                <option value="audiovisual">Audiovisual</option>
+                                <option value="analise-dados">Análise de Dados</option>
+                                <option value="geral">Informação Geral</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-gray-700 font-semibold mb-2">
+                                Mensagem
+                            </label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                required
+                                rows="5"
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-colors resize-none"
+                                placeholder="Como podemos ajudar?"
+                            ></textarea>
+                        </div>
+                        
+                        <button
+                            type="submit"
+                            class="w-full bg-blue-600 text-white px-8 py-4 rounded-xl hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 font-semibold cursor-pointer"
+                        >
+                            Enviar Mensagem
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-950 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-4">Fábrica de Recursos Digitais</h3>
+                    <p class="text-blue-200 mb-6">
+                        Hospital Israelita Albert Einstein
+                    </p>
+                    <p class="text-blue-300 text-sm leading-relaxed">
+                        Transformando a educação médica através da tecnologia, 
+                        design e análise de dados.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2 text-blue-200">
+                        <li>
+                            <a href="#about" class="hover:text-white transition-colors">
+                                Sobre
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#areas" class="hover:text-white transition-colors">
+                                Áreas
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#projects" class="hover:text-white transition-colors">
+                                Projetos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="hover:text-white transition-colors">
+                                Contato
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Redes Sociais</h4>
+                    <div class="flex gap-3 flex-wrap">
+                        <a
+                            href="https://www.linkedin.com/company/hospitalalberteinstein"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="p-3 bg-blue-900 rounded-xl hover:bg-blue-800 transition-colors"
+                            aria-label="LinkedIn"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a
+                            href="https://www.instagram.com/einstein"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="p-3 bg-blue-900 rounded-xl hover:bg-blue-800 transition-colors"
+                            aria-label="Instagram"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a
+                            href="https://www.youtube.com/einstein"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="p-3 bg-blue-900 rounded-xl hover:bg-blue-800 transition-colors"
+                            aria-label="YouTube"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path>
+                                <path d="m10 15 5-3-5-3z"></path>
+                            </svg>
+                        </a>
+                        <a
+                            href="https://www.facebook.com/einstein"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="p-3 bg-blue-900 rounded-xl hover:bg-blue-800 transition-colors"
+                            aria-label="Facebook"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-900 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-blue-300 text-sm">
+                        © <span id="currentYear"></span> Fábrica de Recursos Digitais - Hospital Israelita Albert Einstein. Todos os direitos reservados.
+                    </p>
+                    <div class="flex gap-6 text-sm text-blue-300">
+                        <a href="#" class="hover:text-white transition-colors">
+                            Política de Privacidade
+                        </a>
+                        <a href="#" class="hover:text-white transition-colors">
+                            Termos de Uso
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button 
+        id="scrollToTop" 
+        class="fixed bottom-8 right-8 bg-blue-600 text-white p-4 rounded-full shadow-2xl hover:bg-blue-700 transition-all duration-300 opacity-0 invisible z-50"
+        aria-label="Voltar ao topo"
+    >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <script src="blog-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

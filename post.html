@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post - Blog de Fábrica de Recursos Digitais - Hospital Albert Einstein</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .post-content h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #1e40af;
+        }
+        
+        .post-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #1e40af;
+        }
+        
+        .post-content p {
+            margin-bottom: 1.25rem;
+            line-height: 1.75;
+            color: #374151;
+        }
+        
+        .post-content ul, .post-content ol {
+            margin-bottom: 1.25rem;
+            padding-left: 1.5rem;
+        }
+        
+        .post-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.75;
+            color: #374151;
+        }
+        
+        .post-content ul li {
+            list-style-type: disc;
+        }
+        
+        .post-content ol li {
+            list-style-type: decimal;
+        }
+        
+        .post-content strong {
+            font-weight: 600;
+            color: #1f2937;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+    
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div>
+                    <a href="index.html" class="text-2xl font-bold text-blue-900">Fábrica de Recursos Digitais</a>
+                    <p class="text-sm text-gray-600">Hospital Albert Einstein</p>
+                </div>
+                <nav class="hidden md:flex gap-6">
+                    <a href="blog.html" class="text-blue-600 font-semibold">Blog</a>
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition-colors">Voltar para a Home</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article class="py-12">
+        <div class="max-w-4xl mx-auto px-6">
+            <!-- Back button -->
+            <a href="blog.html" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-8 font-semibold">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Voltar para o blog
+            </a>
+
+            <!-- Post header -->
+            <div id="postHeader" class="mb-8">
+                <!-- Will be filled by JavaScript -->
+            </div>
+
+            <!-- Featured image -->
+            <div id="postImage" class="mb-12 rounded-3xl overflow-hidden shadow-xl">
+                <!-- Will be filled by JavaScript -->
+            </div>
+
+            <!-- Post content -->
+            <div id="postContent" class="post-content text-lg">
+                <!-- Will be filled by JavaScript -->
+            </div>
+
+            <!-- Tags -->
+            <div id="postTags" class="mt-12 pt-8 border-t border-gray-200">
+                <!-- Will be filled by JavaScript -->
+            </div>
+
+            <!-- Author info -->
+            <div id="authorInfo" class="mt-8 p-6 bg-blue-50 rounded-2xl">
+                <!-- Will be filled by JavaScript -->
+            </div>
+
+            <!-- Share buttons -->
+            <div class="mt-8 flex items-center gap-4">
+                <p class="font-semibold text-gray-900">Compartilhar:</p>
+                <button onclick="shareOnLinkedIn()" class="p-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </button>
+                <button onclick="shareOnTwitter()" class="p-3 bg-gray-800 text-white rounded-xl hover:bg-gray-900 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                    </svg>
+                </button>
+                <button onclick="copyLink()" class="p-3 bg-gray-200 text-gray-700 rounded-xl hover:bg-gray-300 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </article>
+
+    <!-- Related posts -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8 text-gray-900">Posts Relacionados</h2>
+            <div id="relatedPosts" class="grid md:grid-cols-3 gap-8">
+                <!-- Will be filled by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-950 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-4">Fábrica de Recursos Digitais</h3>
+                    <p class="text-blue-200 mb-6">
+                        Hospital Israelita Albert Einstein
+                    </p>
+                    <p class="text-blue-300 text-sm leading-relaxed">
+                        Transformando a educação médica através da tecnologia, 
+                        design e análise de dados.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2 text-blue-200">
+                        <li><a href="index.html#about" class="hover:text-white transition-colors">Sobre</a></li>
+                        <li><a href="index.html#areas" class="hover:text-white transition-colors">Áreas</a></li>
+                        <li><a href="blog.html" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="index.html#contact" class="hover:text-white transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Redes Sociais</h4>
+                    <div class="flex gap-3 flex-wrap">
+                        <a href="https://www.linkedin.com/company/hospitalalberteinstein" target="_blank" rel="noopener noreferrer" class="p-3 bg-blue-900 rounded-xl hover:bg-blue-800 transition-colors" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/einstein" target="_blank" rel="noopener noreferrer" class="p-3 bg-blue-900 rounded-xl hover:bg-blue-800 transition-colors" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/einstein" target="_blank" rel="noopener noreferrer" class="p-3 bg-blue-900 rounded-xl hover:bg-blue-800 transition-colors" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path>
+                                <path d="m10 15 5-3-5-3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/einstein" target="_blank" rel="noopener noreferrer" class="p-3 bg-blue-900 rounded-xl hover:bg-blue-800 transition-colors" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-900 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-blue-300 text-sm">
+                        © <span id="currentYear"></span> Hospital Israelita Albert Einstein. Todos os direitos reservados.
+                    </p>
+                    <div class="flex gap-6 text-sm text-blue-300">
+                        <a href="#" class="hover:text-white transition-colors">Política de Privacidade</a>
+                        <a href="#" class="hover:text-white transition-colors">Termos de Uso</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="blog-data.js"></script>
+    <script src="post.js"></script>
+</body>
+</html>
